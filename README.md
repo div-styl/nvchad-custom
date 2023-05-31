@@ -14,5 +14,5 @@ Once you have NVChad up and running, follow these steps to utilize the custom fo
 ## Folder structure
 The custom folder should mirror the structure of the NVChad installation directory. This structure helps maintain organization and ensures that NVChad can find and load your custom additions correctly.
 
-![the structure of the folder](~/Desktop/nvchad-custom/img/Screenshot from 2023-05-31 02-23-14.png)
+![the structure of the folder](/home/user/Desktop/nvchad-custom/img/Screenshot from 2023-05-31 02-23-14.png)
 
