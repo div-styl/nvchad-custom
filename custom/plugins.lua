@@ -109,6 +109,12 @@ local plugins = {
       require "custom.configs.external.hlchunk"
     end,
   },
+  {
+    "andweeb/presence.nvim",
+    config = function()
+      require "custom.configs.external.presence"
+    end,
+  },
 }
 
 return plugins
