@@ -7,6 +7,7 @@ The following plugins are included in my Neovim configuration:
 ```lua
 "andweeb/presence.nvim"     --Discord presence integration for Neovim
 "andweeb/presence.nvim"     --Preview markdown README files in Neovim
+"folke/trouble.nvim"        -- diagnostics [check the mapping key to know how to use it]
 ```
 ## :sleepy: open markdown Preview 
 | Command  | Description              |

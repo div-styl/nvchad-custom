@@ -123,6 +123,13 @@ local plugins = {
     require "custom.configs.external.peek"
   end,
   },
+  {
+  "folke/trouble.nvim",
+  cmd = { "TroubleToggle", "Trouble" },
+  config = function()
+    require "custom.configs.external.trouble"
+   end,
+  },
 }
 
 return plugins
