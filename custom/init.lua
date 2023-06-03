@@ -15,5 +15,5 @@ opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 opt.signcolumn = "auto:1-2"
 
 -- Define custom commands for "peek.nvim" plugin
-vim.api.nvim_command('command! OpenMark lua require("peek").open()')
-vim.api.nvim_command('command! CloseMark lua require("peek").close()')
+vim.api.nvim_command('command! OpenMark lua require("peek").open()') -- you can change the command
+vim.api.nvim_command('command! CloseMark lua require("peek").close()') -- and also here
