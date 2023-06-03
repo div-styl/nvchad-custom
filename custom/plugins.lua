@@ -115,6 +115,15 @@ local plugins = {
       require "custom.configs.external.presence"
     end,
   },
+  -- discord presence added. 
+  {
+  "andweeb/presence.nvim",
+  event = "VeryLazy",
+  config = function()
+    require "custom.configs.external.presence"
+  end,
+  },
+
 }
 
 return plugins
