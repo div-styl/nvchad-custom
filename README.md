@@ -3,7 +3,7 @@ Welcome to the NVChad custom folder! This folder is designed to house all your c
 
 
 ## Getting Started
-To begin, make sure you have NVChad already set up and running on your system. If you haven't installed NVChad yet, please refer to the official NVChad documentation for instructions on how to set it up.
+To begin, make sure you have NVChad already set up and running on your system. If you haven't installed NVChad yet, please refer to the official [NVChad documentation](https://nvchad.com/docs/quickstart/install)  or [Nvchad webisite](https://nvchad.com) for instructions on how to set it up.
 
 Once you have NVChad up and running, follow these steps to utilize the custom folder:
 
@@ -15,3 +15,10 @@ Once you have NVChad up and running, follow these steps to utilize the custom fo
 The custom folder should mirror the structure of the NVChad installation directory. This structure helps maintain organization and ensures that NVChad can find and load your custom additions correctly.
 
 ![folder structer](img/folder-structer.png)
+## Discord Presence Not Working
+
+Please note that the Discord presence feature may not work properly if you are using the Flatpak or Snap version of Discord.
+
+The Discord presence feature allows you to show your activity and status on Discord, such as the game you are playing or the music you are listening to. However, due to limitations in the Flatpak and Snap packaging systems, certain functionality, including the presence feature, may be restricted or unavailable.
+
+To ensure full compatibility and access to all Discord features, it is recommended to use the official standalone version of Discord provided by [the official Discord website](https://discord.com/download).
