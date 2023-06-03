@@ -109,12 +109,6 @@ local plugins = {
       require "custom.configs.external.hlchunk"
     end,
   },
-  {
-    "andweeb/presence.nvim",
-    config = function()
-      require "custom.configs.external.presence"
-    end,
-  },
   -- discord presence added. 
   {
   "andweeb/presence.nvim",
@@ -122,6 +116,13 @@ local plugins = {
   config = function()
     require "custom.configs.external.presence"
   end,
+  },
+  {
+    "toppair/peek.nvim",
+    build = "deno task --quiet build:debug",
+    config = function()
+      require "custom.configs.external.markdown"
+    end,
   },
 
 }
