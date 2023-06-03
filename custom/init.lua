@@ -13,3 +13,7 @@ opt.foldlevelstart = 99
 opt.foldenable = true
 opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 opt.signcolumn = "auto:1-2"
+
+-- Define custom commands for "peek.nvim" plugin
+vim.api.nvim_command('command! OpenMark lua require("peek").open()')
+vim.api.nvim_command('command! CloseMark lua require("peek").close()')
