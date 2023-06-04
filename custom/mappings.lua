@@ -8,7 +8,7 @@ M.general = {
 }
 
 -- more keybinds!
--- trouble key map
+
 M.trouble = {
   n = {
     ["<leader>tt"] = {

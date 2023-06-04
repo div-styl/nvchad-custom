@@ -8,6 +8,7 @@ The following plugins are included in my Neovim configuration:
 "andweeb/presence.nvim"     --Discord presence integration for Neovim
 "andweeb/presence.nvim"     --Preview markdown README files in Neovim
 "folke/trouble.nvim"        -- diagnostics [check the mapping key to know how to use it]
+"f3fora/cmp-spell"          -- spelling checker (note: it might not satisfy your needs.)
 ```
 ## :sleepy: open markdown Preview 
 | Command  | Description              |
@@ -23,9 +24,10 @@ To begin, make sure you have NVChad already set up and running on your system. I
 
 Once you have NVChad up and running, follow these steps to utilize the custom folder:
 
-- Locate the NVChad custom folder in your NVChad installation directory.
+- Locate the NVChad custom folder in your NVChad installation directory. it can be ``/HOME/User/.config/nvim/lua/custom
+``
 - Copy your custom plugins and modifications into the custom folder.
-- Ensure that you adhere to the folder structure and naming conventions outlined by NVChad.
+- Ensure that you adhere to the folder structure and naming conventions outlined by Nvchad.
 
 ## Folder structure
 The custom folder should mirror the structure of the NVChad installation directory. This structure helps maintain organization and ensures that NVChad can find and load your custom additions correctly.

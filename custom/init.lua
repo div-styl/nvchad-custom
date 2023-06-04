@@ -1,6 +1,6 @@
 -- local autocmd = vim.api.nvim_create_autocmd
 
--- Auto resize panes when resizing nvim window
+-- Auto re-size panes when re-sizing nvim window
 -- autocmd("VimResized", {
 --   pattern = "*",
 --   command = "tabdo wincmd =",
@@ -15,5 +15,8 @@ opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 opt.signcolumn = "auto:1-2"
 
 -- Define custom commands for "peek.nvim" plugin
-vim.api.nvim_command('command! OpenMark lua require("peek").open()') -- you can change the command
-vim.api.nvim_command('command! CloseMark lua require("peek").close()') -- and also here
+vim.api.nvim_command('command! OpenMark lua require("peek").open()')
+vim.api.nvim_command('command! CloseMark lua require("peek").close()')
+-- cmp-Spelling 
+vim.opt.spell = true
+vim.opt.spelllang = {'en_us'}

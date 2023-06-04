@@ -130,6 +130,13 @@ local plugins = {
     require "custom.configs.external.trouble"
    end,
   },
+  {
+  "f3fora/cmp-spell",
+  event = "InsertEnter *",
+  config = function()
+    require "custom.configs.external.spell"
+  end,
+  },
 }
 
 return plugins
