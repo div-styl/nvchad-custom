@@ -16,6 +16,8 @@ M.mason = {
     "prettier",
 
     "tailwindcss-language-server",
+    "python",
+    "pyright",
   },
 
   ui = {
@@ -53,6 +55,7 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "prisma",
+    "python",
   },
   indent = {
     enabled = true,

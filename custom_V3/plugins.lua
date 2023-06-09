@@ -1,4 +1,4 @@
-local overrides = require "custom.config.overrides"
+local overrides = require "custom.configs.overrides"
 -- initial active plugins optional
 local active_debug = true
 local active_toggleterm = true
@@ -29,7 +29,7 @@ if active_toggleterm then
       cmd = "ToggleTerm",
       event = "BufRead",
       config = function()
-        require "custom.config.external.toggleterm"
+        require "custom.configs.external.toggleterm"
       end,
     },
   }
@@ -176,8 +176,8 @@ if active_winbar then
       dependencies = "neovim/nvim-lspconfig",
       event = "BufRead",
       config = function()
-        require "custom.config.external.breadcrumb"
-        require "custom.config.external.winbar"
+        require "custom.configs.external.breadcrumb"
+        require "custom.configs.external.winbar"
       end,
     },
   }
@@ -210,7 +210,7 @@ if active_smartsplit then
       "mrjones2014/smart-splits.nvim",
       event = "BufRead",
       config = function()
-        require "custom.config.external.smartsplit"
+        require "custom.configs.external.smartsplit"
       end,
     },
   }
@@ -230,7 +230,7 @@ if active_coderunner then
       -- dependencies = "nvim-lua/plenary.nvim",
       cmd = { "RunCode", "RunFile", "RunProject", "RunClose" },
       config = function()
-        require "custom.config.external.coderunner"
+        require "custom.configs.external.coderunner"
       end,
     },
   }
@@ -261,7 +261,7 @@ if active_debug then
       dependencies = "mfussenegger/nvim-dap",
       enabled = vim.fn.has "win32" == 0,
       config = function()
-        require "custom.config.external.dapui"
+        require "custom.configs.external.dapui"
       end,
     },
     {
@@ -270,7 +270,7 @@ if active_debug then
       dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
       enabled = vim.fn.has "win32" == 0,
       config = function()
-        require "custom.config.external.mason_dap"
+        require "custom.configs.external.mason_dap"
       end,
     },
   }
@@ -287,13 +287,13 @@ local plugins = {
       {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-          require "custom.config.null-ls"
+          require "custom.configs.null-ls"
         end,
       },
     },
     config = function()
       require "plugins.configs.lspconfig"
-      require "custom.config.lspconfig"
+      require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
 
@@ -332,7 +332,7 @@ local plugins = {
     "nvim-lualine/lualine.nvim",
     event = "BufRead",
     config = function()
-      require "custom.config.external.lualine"
+      require "custom.configs.external.lualine"
     end,
   },
   { "hrsh7th/cmp-nvim-lsp", event = "BufRead" },
@@ -444,7 +444,7 @@ local plugins = {
       "williamboman/mason-lspconfig.nvim",
     },
     config = function()
-      require "custom.config.external.lsp"
+      require "custom.configs.lsp"
     end,
   },
   -- for formater linter
@@ -454,7 +454,7 @@ local plugins = {
     dependencies = "jose-elias-alvarez/null-ls.nvim",
     event = "BufRead",
     config = function()
-      require "custom.config.external.mason-null-ls"
+      require "custom.configs.external.mason-null-ls"
     end,
   },
   -- for live server html,css,js
@@ -482,7 +482,7 @@ local plugins = {
     "andweeb/presence.nvim",
     event = "VeryLazy",
     config = function()
-      require "custom.config.external.presence"
+      require "custom.configs.external.presence"
     end,
   },
   -- MARKDWON PREVIEW
@@ -490,7 +490,7 @@ local plugins = {
     "toppair/peek.nvim",
     build = "deno task --quiet build:debug",
     config = function()
-      require "custom.config.external.peek"
+      require "custom.configs.external.peek"
     end,
   },
   --DAIGNOSTIC MOOD
@@ -498,7 +498,7 @@ local plugins = {
     "folke/trouble.nvim",
     cmd = { "TroubleToggle", "Trouble" },
     config = function()
-      require "custom.config.external.trouble"
+      require "custom.configs.external.trouble"
     end,
   },
   --CODE RUNNER
@@ -526,7 +526,7 @@ local plugins = {
       },
     },
     config = function()
-      require "custom.config.external.pretty-fold"
+      require "custom.configs.external.pretty-fold"
     end,
   },
   {
@@ -536,28 +536,28 @@ local plugins = {
       {
         "luukvbaal/statuscol.nvim",
         config = function()
-          require("custom.config.external.nvim-ufo").statuscolSetup()
+          require("custom.configs.external.nvim-ufo").statuscolSetup()
         end,
       },
     },
     event = "BufReadPost",
-    keys = require("custom.config.external.nvim-ufo").ufoKeys,
+    keys = require("custom.configs.external.nvim-ufo").ufoKeys,
     config = function()
-      require("custom.config.external.nvim-ufo").ufoSetup()
+      require("custom.configs.external.nvim-ufo").ufoSetup()
     end,
   },
   {
     "shellRaining/hlchunk.nvim",
     event = "BufReadPost",
     config = function()
-      require "custom.config.external.hlchunk"
+      require "custom.configs.external.hlchunk"
     end,
   },
   {
     "shellRaining/hlchunk.nvim",
     event = "BufReadPost",
     config = function()
-      require "custom.config.external.hlchunk"
+      require "custom.configs.external.hlchunk"
     end,
   },
 }
