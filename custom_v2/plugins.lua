@@ -29,7 +29,7 @@ if active_toggleterm then
       cmd = "ToggleTerm",
       event = "BufRead",
       config = function()
-        require "custom.configs.toggleterm"
+        require "custom.configs.external.toggleterm"
       end,
     },
   }
@@ -176,8 +176,8 @@ if active_winbar then
       dependencies = "neovim/nvim-lspconfig",
       event = "BufRead",
       config = function()
-        require "custom.configs.breadcrumb"
-        require "custom.configs.winbar"
+        require "custom.configs.external.breadcrumb"
+        require "custom.configs.external.winbar"
       end,
     },
   }
@@ -210,7 +210,7 @@ if active_smartsplit then
       "mrjones2014/smart-splits.nvim",
       event = "BufRead",
       config = function()
-        require "custom.configs.smartsplit"
+        require "custom.configs.external.smartsplit"
       end,
     },
   }
@@ -230,7 +230,7 @@ if active_coderunner then
       -- dependencies = "nvim-lua/plenary.nvim",
       cmd = { "RunCode", "RunFile", "RunProject", "RunClose" },
       config = function()
-        require "custom.configs.coderunner"
+        require "custom.configs.external.coderunner"
       end,
     },
   }
@@ -261,7 +261,7 @@ if active_debug then
       dependencies = "mfussenegger/nvim-dap",
       enabled = vim.fn.has "win32" == 0,
       config = function()
-        require "custom.configs.dapui"
+        require "custom.configs.external.dapui"
       end,
     },
     {
@@ -270,7 +270,7 @@ if active_debug then
       dependencies = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
       enabled = vim.fn.has "win32" == 0,
       config = function()
-        require "custom.configs.mason_dap"
+        require "custom.configs.external.mason_dap"
       end,
     },
   }
@@ -329,18 +329,10 @@ local plugins = {
   -- },
   -- custom by pojok code
   {
-    "goolord/alpha-nvim",
-    enabled = false,
-    event = "BufWinEnter",
-    config = function()
-      require "custom.configs.alpha"
-    end,
-  },
-  {
     "nvim-lualine/lualine.nvim",
     event = "BufRead",
     config = function()
-      require "custom.configs.lualine"
+      require "custom.configs.external.lualine"
     end,
   },
   { "hrsh7th/cmp-nvim-lsp", event = "BufRead" },
@@ -445,15 +437,6 @@ local plugins = {
       require("nvim-ts-autotag").setup()
     end,
   },
-  -- key mapping
-  {
-    "folke/which-key.nvim",
-    event = "BufRead",
-    config = function()
-      dofile(vim.g.base46_cache .. "whichkey")
-      require "custom.configs.whichkey"
-    end,
-  },
   {
     "neovim/nvim-lspconfig",
     event = "BufRead",
@@ -471,7 +454,7 @@ local plugins = {
     dependencies = "jose-elias-alvarez/null-ls.nvim",
     event = "BufRead",
     config = function()
-      require "custom.configs.mason-null-ls"
+      require "custom.configs.external.mason-null-ls"
     end,
   },
   -- for live server html,css,js
@@ -494,27 +477,40 @@ local plugins = {
   -- for cmd line popup
   cmdline,
   toggleterm,
+  -- DISCORD PRESENCE
   {
     "andweeb/presence.nvim",
     event = "VeryLazy",
     config = function()
-      require "custom.configs.presence"
+      require "custom.configs.external.presence"
     end,
   },
+  -- MARKDWON PREVIEW
   {
     "toppair/peek.nvim",
     build = "deno task --quiet build:debug",
     config = function()
-      require "custom.configs.peek"
+      require "custom.configs.external.peek"
     end,
   },
+  --DAIGNOSTIC MOOD
   {
     "folke/trouble.nvim",
     cmd = { "TroubleToggle", "Trouble" },
     config = function()
-      require "custom.configs.trouble"
+      require "custom.configs.external.trouble"
     end,
   },
+  --CODE RUNNER
+  {
+    "CRAG666/code_runner.nvim",
+    cmd = { "RunCode" },
+    config = function()
+      require "custom.configs.external.codeRunner"
+    end,
+  },
+
+  --TOGGLING LINES
   {
     "anuvyklack/pretty-fold.nvim",
     event = "BufWinEnter",
@@ -530,7 +526,7 @@ local plugins = {
       },
     },
     config = function()
-      require "custom.configs.pretty-fold"
+      require "custom.configs.external.pretty-fold"
     end,
   },
   {
@@ -540,30 +536,29 @@ local plugins = {
       {
         "luukvbaal/statuscol.nvim",
         config = function()
-          require("custom.configs.nvim-ufo").statuscolSetup()
+          require("custom.configs.external.nvim-ufo").statuscolSetup()
         end,
       },
     },
     event = "BufReadPost",
-    keys = require("custom.configs.nvim-ufo").ufoKeys,
+    keys = require("custom.configs.external.nvim-ufo").ufoKeys,
     config = function()
-      require("custom.configs.nvim-ufo").ufoSetup()
+      require("custom.configs.external.nvim-ufo").ufoSetup()
     end,
   },
   {
     "shellRaining/hlchunk.nvim",
     event = "BufReadPost",
     config = function()
-      require "custom.configs.hlchunk"
+      require "custom.configs.external.hlchunk"
     end,
   },
   {
     "shellRaining/hlchunk.nvim",
     event = "BufReadPost",
     config = function()
-      require "custom.configs.hlchunk"
+      require "custom.configs.external.hlchunk"
     end,
   },
 }
-
 return plugins

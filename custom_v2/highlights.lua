@@ -9,11 +9,17 @@ M.override = {
   Comment = {
     italic = true,
   },
+  Folded = {
+    bg = "black",
+  },
+  IndentBlanklineContextStart = {
+    bg = "none",
+  },
 }
-
 ---@type HLTable
 M.add = {
   NvimTreeOpenedFolderName = { fg = "green", bold = true },
+  FoldColumn = { bg = "black" },
 }
 
 return M

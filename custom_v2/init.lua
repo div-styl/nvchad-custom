@@ -16,7 +16,7 @@ autocmd("VimEnter", {
 local opt = vim.opt
 opt.cmdheight = 0
 
-require "custom.configs.format_onsave"
+require "custom.configs.external.format_onsave"
 
 local lpath = vim.fn.stdpath "config" .. "/lua/custom/my-snippets"
 vim.g.vscode_snippets_path = lpath
@@ -47,8 +47,8 @@ opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 opt.signcolumn = "auto:1-2"
 
 -- Define custom commands for "peek.nvim" plugin
-vim.api.nvim_command 'command! OpenMark lua require("peek").open()'
-vim.api.nvim_command 'command! CloseMark lua require("peek").close()'
+vim.api.nvim_command ('command! OPR lua require("peek").open()')
+vim.api.nvim_command ('command! CR lua require("peek").close()')
 -- cmp-Spelling
 --vim.opt.spell = true
 --vim.opt.spelllang = {'en_us'}
