@@ -139,6 +139,277 @@ local plugins = {
       }
     end,
   },
+  {
+    "petertriho/nvim-scrollbar",
+    event = "BufReadPost",
+    config = true,
+  },
+  {
+    "folke/todo-comments.nvim",
+    event = "BufReadPost",
+    config = function()
+      require "custom.configs.todo"
+    end,
+  },
+  {
+    "chikko80/error-lens.nvim",
+    -- event = "BufRead",
+    ft = "clang, python, bash, ",
+    config = true,
+  },
+  {
+    "nvim-telescope/telescope-ui-select.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("telescope").load_extension "ui-select"
+    end,
+  },
+  { "rainbowhxch/beacon.nvim", event = "BufReadPost" },
+  {
+    "echasnovski/mini.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("mini.animate").setup {
+        scroll = {
+          enable = false,
+        },
+      }
+    end,
+  },
+  {
+    "gorbit99/codewindow.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("codewindow").setup {
+        show_cursor = false, -- Show the cursor position in the minimap
+        window_border = "rounded", -- The border style of the floating window (accepts all usual options)
+      }
+      -- vim.api.nvim_set_hl(0, 'CodewindowBorder', {fg = '#141423'})
+    end,
+  },
+  -- stopped here ----------
+  {
+    "shellRaining/hlchunk.nvim",
+    event = "BufReadPost",
+    config = function()
+      require "custom.configs.hlchunk"
+    end,
+  },
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = {
+      "kevinhwang91/promise-async",
+      {
+        "luukvbaal/statuscol.nvim",
+        config = function()
+          require("custom.configs.nvim-ufo").statuscolSetup()
+        end,
+      },
+    },
+    event = "BufReadPost",
+    keys = require("custom.configs.nvim-ufo").ufoKeys,
+    config = function()
+      require("custom.configs.nvim-ufo").ufoSetup()
+    end,
+  },
+  {
+    "weilbith/nvim-code-action-menu",
+    cmd = "CodeActionMenu",
+    init = function()
+      vim.g.code_action_menu_show_details = true
+      vim.g.code_action_menu_show_diff = true
+      vim.g.code_action_menu_show_action_kind = true
+    end,
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = "LazyGit",
+  },
+  {
+    "BrunoKrugel/lazydocker.nvim",
+    cmd = "LazyDocker",
+  },
+  {
+    "smjonas/inc-rename.nvim",
+    event = "LspAttach",
+    config = true,
+  },
+  {
+    "AckslD/muren.nvim",
+    cmd = "MurenToggle",
+    config = true,
+  },
+  {
+    "f-person/git-blame.nvim",
+    cmd = "GitBlameToggle",
+  },
+  {
+    "jinzhongjia/LspUI.nvim",
+    event = "LspAttach",
+    config = function()
+      require("LspUI").setup()
+    end,
+  },
+  {
+    "lvimuser/lsp-inlayhints.nvim",
+    event = "LspAttach",
+    config = function()
+      require "custom.configs.inlayhints"
+    end,
+  },
+  {
+    "samodostal/image.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      {
+        "m00qek/baleia.nvim",
+        tag = "v1.3.0",
+      },
+    },
+    config = function()
+      require("image").setup {
+        render = {
+          min_padding = 5,
+          show_label = true,
+          use_dither = true,
+          foreground_color = true,
+          background_color = true,
+        },
+        events = {
+          update_on_nvim_resize = true,
+        },
+      }
+    end,
+    init = function()
+      if not vim.fn.executable "ascii-image-converter" then
+        vim.api.nvim_command 'echo "Command is not executable. snap install ascii-image-converter"'
+      end
+    end,
+  },
+  {
+    "VonHeikemen/searchbox.nvim",
+    cmd = { "SearchBoxMatchAll", "SearchBoxReplace", "SearchBoxIncSearch" },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+    config = true,
+  },
+  {
+    "sindrets/diffview.nvim",
+    cmd = "DiffviewOpen",
+    config = function()
+      require("diffview").setup {
+        enhanced_diff_hl = true,
+        view = {
+          merge_tool = {
+            layout = "diff3_mixed",
+            disable_diagnostics = true,
+          },
+        },
+      }
+    end,
+  },
+  {
+    "kevinhwang91/nvim-hlslens",
+    event = "BufReadPost",
+    config = function()
+      require("scrollbar.handlers.search").setup {}
+    end,
+  },
+  {
+    "tzachar/highlight-undo.nvim",
+    event = "BufReadPost",
+    config = function()
+      require("highlight-undo").setup {}
+    end,
+  },
+  {
+    "anuvyklack/pretty-fold.nvim",
+    event = "BufWinEnter",
+    dependencies = {
+      {
+        "anuvyklack/fold-preview.nvim",
+        dependencies = {
+          "anuvyklack/keymap-amend.nvim",
+        },
+        opts = {
+          border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        },
+      },
+    },
+    config = function()
+      require "custom.configs.pretty-fold"
+    end,
+  },
+  {
+    "Fildo7525/pretty_hover",
+    event = "LspAttach",
+    config = true,
+  },
+  -- {
+  --   "VidocqH/lsp-lens.nvim",
+  --   event = "BufReadPost",
+  --   config = true,
+  -- },
+  {
+    "ziontee113/icon-picker.nvim",
+    cmd = "IconPickerNormal",
+    config = function()
+      require("icon-picker").setup {
+        disable_legacy_commands = true,
+      }
+    end,
+  },
+  {
+    "nvimdev/lspsaga.nvim",
+    event = "LspAttach",
+    config = function()
+      require "custom.configs.lspsaga"
+    end,
+  },
+  {
+    "max397574/colortils.nvim",
+    cmd = "Colortils",
+    config = function()
+      require("colortils").setup()
+    end,
+  },
+  {
+    "dnlhc/glance.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("glance").setup {
+        -- your configuration
+      }
+    end,
+  },
+   {
+    "Zeioth/compiler.nvim",
+    cmd = { "CompilerOpen", "CompilerToggleResults" },
+    dependencies = {
+      {
+        "stevearc/overseer.nvim",
+        commit = "3047ede61cc1308069ad1184c0d447ebee92d749",
+        opts = {
+          task_list = {
+            direction = "bottom",
+            min_height = 25,
+            max_height = 25,
+            default_detail = 1,
+            bindings = {
+              ["q"] = function()
+                vim.cmd "OverseerClose"
+              end,
+            },
+          },
+        },
+      },
+    },
+    config = function(_, opts)
+      require("compiler").setup(opts)
+    end,
+  },
 --markdown ---
   {
     "iamcco/markdown-preview.nvim",
